@@ -1,0 +1,68 @@
+/*
+** Module   :NPDJVU.RC
+** Abstract :Plugin resources
+**
+** Copyright (C) Sergey I. Yevtushenko
+**
+** This software is subject to, and may be distributed under, the
+** GNU General Public License, Version 2. The license should have
+** accompanied the software or you may obtain a copy of the license
+** from the Free Software Foundation at http://www.fsf.org .
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+**----------------------------------------------------------------
+**
+** Log: Tue  02/12/2003 Created
+**      Sat  13/12/2003 Removed redundant dialogs and menus
+*/
+
+#include "npapi.h"
+#include "npdjvu.h"
+
+//-----------------------------------------
+// Required by plugin specs
+//-----------------------------------------
+
+RCDATA NP_INFO_CompanyName      { "ES@Home\0" }
+RCDATA NP_INFO_FileDescription  { "DjVu Plugin - Copyright (c) 2003 Sergey I. Yevtushenko <es@os2.ru\0"}
+RCDATA NP_INFO_FileExtents      { "djvu|djv|*|*|*|*|*\0"}
+RCDATA NP_INFO_FileOpenName     { "DjVu File|DjVu File|DjVu File|DjVu File|DjVu File (obsolete)|DjVu File (obsolete)|DjVu File\0"}
+RCDATA NP_INFO_FileVersion      { 1,0,0,1, }
+RCDATA NP_INFO_InternalName     { "NPDJVU\0" }
+RCDATA NP_INFO_LegalCopyright   { "Copyright (c) 2003  Sergey I. Yevtushenko <es@os2.ru>\0" }
+RCDATA NP_INFO_MIMEType         { "image/x-djvu|image/x-djvu|image/x.djvu|image/djvu|image/x-dejavu|image/x-iw44|image/vnd.djvu\0"}
+RCDATA NP_INFO_OriginalFilename { "NPDJVU.DLL\0" }
+RCDATA NP_INFO_ProductName      { "DjVu Plugin\0" }
+RCDATA NP_INFO_ProductVersion   { 1,0,0,1 }
+
+//-----------------------------------------
+// Main menu. Hopefully will gone when toolbar
+// approach will be changed.
+//-----------------------------------------
+
+MENU FID_PANE
+{
+    MENUITEM "" , -1, MIS_TEXT, MIA_DISABLED
+}
+
+MENU FID_CTXMENU
+{
+    MENUITEM "~Retain scale"    , CMD_SAVE_ZOOM, MIS_TEXT
+    MENUITEM "~BW mode"         , CMD_BW_MODE  , MIS_TEXT
+    MENUITEM "", -1, MIS_SEPARATOR
+    MENUITEM "~About..."        , CMD_ABOUT    , MIS_TEXT
+}
+
+//-----------------------------------------
+// Toolbar bitmaps
+//-----------------------------------------
+
+BITMAP BID_FIRST "bitmap\\first.bmp"
+BITMAP BID_BCK01 "bitmap\\bck01.bmp"
+BITMAP BID_FWD01 "bitmap\\fwd01.bmp"
+BITMAP BID_LAST  "bitmap\\last.bmp"
+
